@@ -3,6 +3,7 @@ Distintos clasificadores simples para reconocimiento de patrones.
 
 
 # Cómo colaborar en un proyecto en GitHub
+## (Si no tienes permisos de Colaborador otorgados)
 
 *   Fork del repositorio
 *   Clonar el repositorio
