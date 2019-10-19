@@ -97,8 +97,15 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
+# PyCharm project settings
+.idea
+
 # mkdocs documentation
 /site
 
 # mypy
 .mypy_cache/
+
+# Custom Files
+TP_IA_2019_Enunciado.pdf
+.DS_Store
