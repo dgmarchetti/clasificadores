@@ -3,6 +3,7 @@
 from NeuralNetwork import NeuralNetwork
 import data_io as io
 
+
 def correcto(s, p):
     if p > 0.5 and s == 1:
         return 1
@@ -10,8 +11,9 @@ def correcto(s, p):
         return 1
     return 0
 
+
 layers = [5, 7, 3, 1]
-nro_epochs = 4000000
+nro_epochs = 4500000
 index = 0
 correctos = 0
 tasa_aprendizaje = 0.02
@@ -26,22 +28,22 @@ for e in x:
     predicted = nn.predict(e)
     bien = correcto(y[index][0], predicted[0])
     correctos += bien
-    print("Entradas:", e, "Salida:", y[index], "Predicción:", predicted, "Bien: ", bien, "Correctos:", correctos)
+    # print("Entradas:", e, "Salida:", y[index], "Predicción:", predicted, "Bien: ", bien, "Correctos:", correctos)
     index += 1
 
-print("Layers:", layers, "Epochs:",nro_epochs, "Learning Rate:", tasa_aprendizaje)
-print("Correctos " + str(correctos) + " sobre " + str(index) + " "+ str(correctos/(index)*100) + "%.")
+print("Layers:", layers, "Epochs:", nro_epochs, "Learning Rate:", tasa_aprendizaje)
+print("Correctos " + str(correctos) + " sobre " + str(index) + " "+ str(correctos/index*100) + "%.")
 
 
-# Imprimir los pesos de las conexiones
-nn.print_weights()
+# Guardar los pesos de las conexiones
+nn.savetxt('test.out')
 
 # Graficamos la función coste
 # deltas = nn.get_deltas()
 # valores=[]
 # index=0
 # for arreglo in deltas:
-#     valores.append(arreglo[1][0] + arreglo[1][0])
+#     valores.append(arreglo[1][0] + arreglo[1][1])
 #     index=index+1
 #
 # plt.plot(range(len(valores)), valores, color='b')

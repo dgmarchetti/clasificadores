@@ -109,3 +109,6 @@ venv.bak/
 # Custom Files
 TP_IA_2019_Enunciado.pdf
 .DS_Store
+
+# Salidas
+salidas_pesos/*
