@@ -16,7 +16,7 @@ layers = [5, 7, 3, 1]
 nro_epochs = 4500000
 index = 0
 correctos = 0
-tasa_aprendizaje = 0.02
+tasa_aprendizaje = 0.01758
 
 # Datos TP
 nn = NeuralNetwork(layers)

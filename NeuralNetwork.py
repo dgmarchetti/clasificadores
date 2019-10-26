@@ -96,5 +96,11 @@ class NeuralNetwork:
         for i in range(len(self.weights)):
             np.savetxt('./salidas_pesos/layer_'+str(i+1)+'_'+filename, self.weights[i], fmt='%.60f')
 
+    def loadtxt(self, filename):
+        pesos = []
+        for i in range(len(self.weights)):
+            pesos.append(np.loadtxt('./salidas_pesos/layer_'+str(i+1)+'_'+filename, ndmin=2))
+        self.weights = pesos
+
     def get_deltas(self):
         return self.deltas
