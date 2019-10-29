@@ -30,9 +30,9 @@ class NeuralNetwork:
         # inicializo los pesos
         self.weights = []
         self.deltas = []
-        # capas = [2,3,2]
-        # rando de pesos varia entre (-1,1)
-        # asigno valores aleatorios a capa de entrada y capa oculta
+        # capas = [5, 7, 3, 1]
+        # random de pesos varia entre (-1, 1)
+        # asigno valores aleatorios a capa de entrada y capa/s oculta/s
         for i in range(1, len(layers) - 1):
             r = 2 * np.random.random((layers[i - 1] + 1, layers[i] + 1)) - 1
             self.weights.append(r)
@@ -65,13 +65,13 @@ class NeuralNetwork:
             self.deltas.append(deltas)
 
             # invertir
-            # [level3(output)->level2(hidden)]  => [level2(hidden)->level3(output)]
+            # [levelN(output)->levelN-1(hidden)]  => [levelN-1(hidden)->levelN(output)]
             deltas.reverse()
 
             # backpropagation
             # 1. Multiplicar los delta de salida con las activaciones de entrada
             #    para obtener el gradiente del peso.
-            # 2. actualizo el peso restandole un porcentaje del gradiente
+            # 2. Actualizar el peso restandole un porcentaje del gradiente
             for i in range(len(self.weights)):
                 layer = np.atleast_2d(a[i])
                 delta = np.atleast_2d(deltas[i])

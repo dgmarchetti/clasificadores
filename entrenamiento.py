@@ -13,13 +13,13 @@ def correcto(s, p):
 
 
 layers = [5, 7, 3, 1]
-nro_epochs = 4500000
+nro_epochs = 3500000
 index = 0
 correctos = 0
-tasa_aprendizaje = 0.01758
+tasa_aprendizaje = 0.017
 
 # Datos TP
-nn = NeuralNetwork(layers)
+nn = NeuralNetwork(layers, activation='tanh')
 x = io.get_x_data().values
 y = io.get_y_data().values
 nn.fit(x, y, learning_rate=tasa_aprendizaje, epochs=nro_epochs)

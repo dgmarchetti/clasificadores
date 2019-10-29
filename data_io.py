@@ -23,4 +23,4 @@ def get_y_data():
 
 def save_y_data(data):
     df = pd.DataFrame(data)
-    df.to_csv("./datasets/test/Y_test.csv",index=False,header=False)
+    df.to_csv("./datasets/test/Y_test.csv", index=False, header=False)
